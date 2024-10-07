@@ -20,7 +20,8 @@ terraform {
 
     arguments = [
       "-lock-timeout=10m",
-      "-var", "module=${path_relative_to_include()}"
+      "-var", "module=${path_relative_to_include()}",
+      "-var-file=${get_parent_terragrunt_dir()}/sensitive.tfvars"
     ]
 
     required_var_files = [

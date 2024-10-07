@@ -26,11 +26,13 @@ variable "environment" {
 variable "app_port" {
   description = "Application port"
   type = number
+  default = 5432
 }
 
 variable "app_image" {
   type = string 
   description = "Container image to be used for application in task definition file"
+  default = "postgres:14.13"
 }
 
 variable "availability_zones" {
